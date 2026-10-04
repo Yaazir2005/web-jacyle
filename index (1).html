@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yasir & Hothan – Xasuustayada</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito:wght@400;600&family=Caveat:wght@600&display=swap">
+<style>
+:root{--bg:#f1e8f2;--ink:#3a1f4a;--soft:#7a6585;--card:#fffdfb;--rose:#d6456b;--teal:#2a8c8c;--line:#d9c8dd;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1226;--ink:#f3e8f6;--soft:#b49fc0;--card:#2a1b36;--rose:#ff7a9c;--teal:#5cc6c6;--line:#4a3558}}
+:root[data-theme="dark"]{--bg:#1d1226;--ink:#f3e8f6;--soft:#b49fc0;--card:#2a1b36;--rose:#ff7a9c;--teal:#5cc6c6;--line:#4a3558}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Nunito,system-ui,sans-serif}
+main{max-width:980px;margin:0 auto;padding:0 20px 60px}
+.hero{text-align:center;padding:64px 0 36px}
+h1{font:800 clamp(2.6rem,10vw,5.5rem)/1 Fraunces,Georgia,serif;margin:0;letter-spacing:-.02em}
+h1 span{color:var(--rose);font-weight:600;padding:0 .12em}
+.sub{font:600 1.7rem Caveat,cursive;color:var(--soft);margin:10px 0 0}
+.count{margin:34px auto 0;max-width:420px;border:2px dashed var(--line);border-radius:18px;padding:18px}
+.count b{display:block;font:800 3.2rem/1 Fraunces,serif;color:var(--teal)}
+.count small{color:var(--soft)}
+label{display:block;font-size:.85rem;color:var(--soft);margin:12px 0 4px}
+input,textarea,select{width:100%;font:inherit;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:9px 12px}
+input:focus,textarea:focus,select:focus,button:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+h2{font:600 2rem Fraunces,serif;margin:44px 0 6px}
+.add{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:8px 20px 20px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+.btn{margin-top:16px;background:var(--rose);color:#fff;border:0;border-radius:999px;padding:11px 26px;font:600 1rem Nunito,sans-serif;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:30px 24px;margin-top:26px}
+.pol{background:var(--card);padding:14px 14px 18px;border-radius:4px;box-shadow:0 6px 18px rgba(58,31,74,.18);position:relative}
+.pol:nth-child(3n+1){transform:rotate(-1.8deg)}.pol:nth-child(3n+2){transform:rotate(1.4deg)}.pol:nth-child(3n){transform:rotate(-.6deg)}
+.pic{height:140px;border-radius:2px;display:grid;place-items:center;font-size:3.4rem;background:linear-gradient(135deg,var(--c1),var(--c2))}
+.pol h3{font:800 1.25rem Fraunces,serif;margin:12px 0 0}
+.date{font:600 1.25rem Caveat,cursive;color:var(--rose)}
+.pol p{margin:6px 0 0;font-size:.95rem;color:var(--soft)}
+.del{position:absolute;top:6px;right:8px;background:none;border:0;color:#fff;font-size:1.3rem;cursor:pointer;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.pic{background-size:cover;background-position:center}.cam{position:absolute;bottom:22px;right:22px;background:rgba(255,255,255,.9);color:#3a1f4a;border:0;border-radius:999px;padding:5px 11px;font:600 .8rem Nunito,sans-serif;cursor:pointer}.fname{font-size:.85rem;color:var(--teal);margin-top:6px;min-height:1.2em}input[type=file]{padding:8px}
+.empty{grid-column:1/-1;text-align:center;color:var(--soft);padding:30px}
+footer{text-align:center;font:600 1.4rem Caveat,cursive;color:var(--soft);margin-top:60px}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+  <h1><bdi id="n1">Yasir</bdi><span>&</span><bdi id="n2">Hothan</bdi></h1>
+  <p class="sub">Xasuustayada la guray</p>
+  <div class="count">
+    <b id="days">–</b>
+    <small id="dayslbl">Dooro taariikhda aad bilowdeen</small>
+    <label for="start">Taariikhda aan bilownay</label>
+    <input type="date" id="start">
+  </div>
+  <div class="count">
+    <div class="row">
+      <div><label for="na">Magaca koowaad</label><input id="na" maxlength="30" autocomplete="off"></div>
+      <div><label for="nb">Magaca labaad</label><input id="nb" maxlength="30" autocomplete="off"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Isku xirka labada telefoon</h2>
+  <div class="add">
+    <div id="codebox">
+      <label for="code">Koodka gaarka ah ee labadiinna (isku mid ku qora labada telefoon)</label>
+      <input id="code" maxlength="40" autocomplete="off" placeholder="Tusaale: jacayl2026 (ugu yaraan 6 xaraf)">
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+      <button class="btn" id="link">Isku xir</button>
+      <button class="btn" id="unlink" style="background:var(--soft)" hidden>Jooji isku xirka</button>
+      <span class="fname" id="sync" role="status"></span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Ku dar xasuus cusub</h2>
+  <div class="add">
+    <div class="row">
+      <div><label for="t">Cinwaanka</label><input id="t" maxlength="50" placeholder="Tusaale: Safarkii ugu horreeyay"></div>
+      <div><label for="d">Taariikhda</label><input type="date" id="d"></div>
+    </div>
+    <div class="row">
+      <div><label for="e">Calaamad</label>
+        <select id="e"><option>💖</option><option>🌹</option><option>✈️</option><option>🎂</option><option>🌅</option><option>🍽️</option><option>💍</option><option>📸</option></select></div>
+      <div><label for="f">Sawir (ikhtiyaari)</label><input type="file" id="f" accept="image/*"><div class="fname" id="fname"></div></div>
+    </div>
+    <input type="file" id="f2" accept="image/*" hidden>
+    <label for="n">Sheekada gaaban</label>
+    <textarea id="n" rows="3" maxlength="240" placeholder="Maxaa dhacay maalintaas?"></textarea>
+    <button class="btn" id="save">Ku dar xasuusta</button>
+  </div>
+</section>
+
+<section>
+  <h2>Xasuustayada</h2>
+  <div class="grid" id="grid"></div>
+</section>
+<footer><bdi id="fa">Hothan</bdi> & <bdi id="fb">Yasir</bdi>, weligood.</footer>
+</main>
+
+<script>
+var KEY="yh-memories-v1",SKEY="yh-start-v1";
+var sample=[
+ {id:1,t:"Kulankii ugu horreeyay",d:"",e:"💖",n:"Maalintii aan is aragnay oo wax walba bilaabmay. (Ttir ama bedel tan.)"},
+ {id:2,t:"Safarkayagii ugu horreeyay",d:"",e:"✈️",n:"Meel aan wada tagnay oo aan weligeen illoobi doonin."},
+ {id:3,t:"Maalinta dhalashada",d:"",e:"🎂",n:"Hadiyaddii iyo qosolkii maalintaas."}
+];
+function load(k,def){try{var v=localStorage.getItem(k);return v?JSON.parse(v):def}catch(x){return def}}
+function store(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(x){}}
+var mem=sample,db=null,attachId=null,pal=[["#f7b2c4","#c9a6e8"],["#9ad9d4","#b9c8f0"],["#ffd39a","#f7a6b8"]];
+function idb(){return new Promise(function(r){try{var q=indexedDB.open("yh",1);q.onupgradeneeded=function(){q.result.createObjectStore("k")};q.onsuccess=function(){r(q.result)};q.onerror=function(){r(null)}}catch(x){r(null)}})}
+function dget(k){return new Promise(function(r){if(!db)return r(null);try{var q=db.transaction("k").objectStore("k").get(k);q.onsuccess=function(){r(q.result||null)};q.onerror=function(){r(null)}}catch(x){r(null)}})}
+function persist(){if(db){try{db.transaction("k","readwrite").objectStore("k").put(mem,KEY)}catch(x){}}}
+function save(){persist();sync()}
+function shrink(f){return new Promise(function(r){var fr=new FileReader();fr.onload=function(){var im=new Image();im.onload=function(){var s=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*s;c.height=im.height*s;c.getContext("2d").drawImage(im,0,0,c.width,c.height);r(c.toDataURL("image/jpeg",.78))};im.onerror=function(){r("")};im.src=fr.result};fr.onerror=function(){r("")};fr.readAsDataURL(f)})}
+function fmt(s){if(!s)return"";var p=s.split("-");var m=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return p[2]+" "+m[+p[1]-1]+" "+p[0]}
+function draw(){
+  var g=document.getElementById("grid");g.innerHTML="";
+  if(!mem.length){g.innerHTML='<div class="empty">Weli xasuus ma jirto. Ku dar tii ugu horreysay kor.</div>';return}
+  mem.slice().sort(function(a,b){return (b.d||"").localeCompare(a.d||"")}).forEach(function(m,i){
+    var c=pal[i%3],el=document.createElement("article");el.className="pol";
+    el.innerHTML='<div class="pic" style="--c1:'+c[0]+';--c2:'+c[1]+'"></div><div class="date"></div><h3></h3><p></p><button class="del" aria-label="Tir xasuusta">×</button>';
+    var pic=el.querySelector(".pic");
+    if(m.p){pic.style.backgroundImage="url("+m.p+")";pic.textContent=""}else{pic.textContent=m.e}
+    var cam=document.createElement("button");cam.className="cam";cam.textContent=m.p?"📷 Bedel":"📷 Ku dar sawir";
+    cam.onclick=function(){attachId=m.id;document.getElementById("f2").click()};el.appendChild(cam);
+    el.querySelector(".date").textContent=fmt(m.d)||"Taariikh la'aan";
+    el.querySelector("h3").textContent=m.t;
+    el.querySelector("p").textContent=m.n;
+    el.querySelector(".del").onclick=function(){mem=mem.filter(function(x){return x.id!==m.id});save();draw()};
+    g.appendChild(el);
+  });
+}
+function count(){
+  var s=document.getElementById("start").value,b=document.getElementById("days"),l=document.getElementById("dayslbl");
+  if(!s){b.textContent="–";l.textContent="Dooro taariikhda aad bilowdeen";return}
+  var n=Math.floor((Date.now()-new Date(s+"T00:00:00").getTime())/864e5);
+  b.textContent=Math.max(n,0).toLocaleString();l.textContent="maalmood oo aan wada jirnay";
+}
+document.getElementById("start").value=load(SKEY,"");
+document.getElementById("start").onchange=function(){store(SKEY,this.value);count();sync()};
+document.getElementById("f").onchange=function(){document.getElementById("fname").textContent=this.files[0]?"✓ "+this.files[0].name:""};
+document.getElementById("f2").onchange=async function(){
+  var f=this.files[0];this.value="";if(!f||attachId===null)return;
+  var p=await shrink(f);
+  mem.forEach(function(m){if(m.id===attachId&&p)m.p=p});
+  attachId=null;save();draw();
+};
+document.getElementById("save").onclick=async function(){
+  var t=document.getElementById("t").value.trim();
+  if(!t){document.getElementById("t").focus();return}
+  var fi=document.getElementById("f"),p=fi.files[0]?await shrink(fi.files[0]):"";
+  mem.push({id:Date.now(),t:t,d:document.getElementById("d").value,e:document.getElementById("e").value,n:document.getElementById("n").value.trim(),p:p});
+  save();draw();
+  ["t","d","n"].forEach(function(i){document.getElementById(i).value=""});
+  fi.value="";document.getElementById("fname").textContent="";
+};
+var nm=load("yh-names-v1",{a:"Yasir",b:"Hothan"});
+function names(){var a=(nm.a||"").trim()||"…",b=(nm.b||"").trim()||"…";
+  document.getElementById("n1").textContent=a;document.getElementById("n2").textContent=b;
+  document.getElementById("fa").textContent=b;document.getElementById("fb").textContent=a;
+  document.title=a+" & "+b+" – Xasuustayada"}
+["na","nb"].forEach(function(id){var k=id==="na"?"a":"b",el=document.getElementById(id);
+  el.value=nm[k]||"";el.oninput=function(){nm[k]=this.value;store("yh-names-v1",nm);names();sched()}});
+names();
+var SB_URL="https://vbimfsqlwiekntvhzqqb.supabase.co",SB_KEY="sb_publishable_X1C1hbkHXeP4OUwxuIEM_Q_NaJ4UnFE";
+var link=load("yh-link",null),snap=load("yh-snap",{}),since=load("yh-since","1970-01-01T00:00:00Z"),busy=false,again=false,tm=null,ok=false;
+function hs(s){var h=5381;for(var i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))|0;return h+":"+s.length}
+function setItem(){return{a:nm.a,b:nm.b,s:document.getElementById("start").value}}
+function rpc(fn,body){return fetch(SB_URL+"/rest/v1/rpc/"+fn,{method:"POST",headers:{apikey:SB_KEY,"Content-Type":"application/json"},body:JSON.stringify(body)}).then(function(r){if(!r.ok)throw new Error(r.status);return r.text()}).then(function(t){return t?JSON.parse(t):null})}
+function hashCode(c){var s="yh1:"+c.toLowerCase();if(window.crypto&&crypto.subtle&&window.TextEncoder)return crypto.subtle.digest("SHA-256",new TextEncoder().encode(s)).then(function(b){return Array.prototype.map.call(new Uint8Array(b),function(x){return("0"+x.toString(16)).slice(-2)}).join("")});return Promise.resolve("p:"+s)}
+function setSt(t){document.getElementById("sync").textContent=t}
+function ui(){var on=!!link;document.getElementById("link").hidden=on;document.getElementById("unlink").hidden=!on;document.getElementById("codebox").hidden=on;setSt(on?(ok?"Ku xiran ✓":"Waa la xirayaa..."):"Weli ma xirna")}
+function syncInputs(){document.getElementById("na").value=nm.a||"";document.getElementById("nb").value=nm.b||""}
+function diff(){var out=[],cur={},sj=JSON.stringify(setItem());
+  mem.forEach(function(m){cur[m.id]=1;var h=hs(JSON.stringify(m));if(snap[m.id]!==h)out.push({id:String(m.id),data:m,deleted:false,h:h})});
+  Object.keys(snap).forEach(function(k){if(k!=="_set"&&!cur[k])out.push({id:k,data:{},deleted:true,h:null})});
+  if(snap._set!==hs(sj))out.push({id:"_set",data:setItem(),deleted:false,h:hs(sj)});
+  return out}
+function push(){var d=diff(),p=Promise.resolve();
+  for(var i=0;i<d.length;i+=4)(function(part){p=p.then(function(){return rpc("yh_push",{h:link,items:part.map(function(x){return{id:x.id,data:x.data,deleted:x.deleted}})}).then(function(){part.forEach(function(x){if(x.deleted)delete snap[x.id];else snap[x.id]=x.h});store("yh-snap",snap)})})})(d.slice(i,i+4));
+  return p}
+function applyRows(rows){var ch=false;
+  rows.forEach(function(r){if(r.updated_at>since)since=r.updated_at;
+    if(r.id==="_set"){if(snap._set!==undefined&&snap._set!==hs(JSON.stringify(setItem())))return;var v=r.data||{};if(v.a!=null)nm.a=v.a;if(v.b!=null)nm.b=v.b;document.getElementById("start").value=v.s||"";store(SKEY,v.s||"");store("yh-names-v1",nm);snap._set=hs(JSON.stringify(setItem()));ch=true;return}
+    var i=-1;for(var j=0;j<mem.length;j++)if(String(mem[j].id)===r.id){i=j;break}
+    if(i>=0&&snap[r.id]!==hs(JSON.stringify(mem[i])))return;
+    if(r.deleted){if(i>=0){mem.splice(i,1);ch=true}delete snap[r.id];return}
+    if(i<0&&snap[r.id]!==undefined)return;
+    var it=r.data;if(i<0)mem.push(it);else mem[i]=it;snap[r.id]=hs(JSON.stringify(it));ch=true});
+  return ch}
+function pull(){return rpc("yh_pull",{h:link,since:since}).then(function(rows){rows=rows||[];var ch=applyRows(rows);store("yh-snap",snap);store("yh-since",since);
+  if(ch){persist();draw();count();syncInputs();names()}
+  if(rows.length>=50)return pull()})}
+function sync(){if(!link)return;if(busy){again=true;return}busy=true;
+  pull().then(push).then(function(){ok=true;ui()}).catch(function(){ok=false;setSt("Offline: way iswaafajin doontaa")}).then(function(){busy=false;if(again){again=false;sync()}})}
+function sched(){clearTimeout(tm);tm=setTimeout(sync,800)}
+document.getElementById("link").onclick=function(){var c=document.getElementById("code").value.trim();
+  if(c.length<6){setSt("Koodku waa inuu ahaadaa ugu yaraan 6 xaraf");return}
+  hashCode(c).then(function(h){link=h;store("yh-link",h);snap={};since="1970-01-01T00:00:00Z";store("yh-snap",snap);store("yh-since",since);document.getElementById("code").value="";ok=false;ui();sync()})};
+document.getElementById("unlink").onclick=function(){link=null;snap={};ok=false;store("yh-link",null);store("yh-snap",snap);ui()};
+setInterval(sync,10000);document.addEventListener("visibilitychange",function(){if(!document.hidden)sync()});window.addEventListener("online",sync);
+ui();
+count();draw();
+idb().then(function(d){db=d;return dget(KEY)}).then(function(v){
+  if(v){mem=v}else{var old=load(KEY,null);if(old)mem=old}
+  draw();ui();sync();
+});
+</script>
+</body>
+</html>
